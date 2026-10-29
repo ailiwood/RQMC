@@ -1,0 +1,1 @@
+# AI-use declaration: OpenAI Codex (GPT-6) assisted with implementation, verification, experiment execution, analysis, and manuscript editing. It is not an author; the human authors retain responsibility for the code and reported results.

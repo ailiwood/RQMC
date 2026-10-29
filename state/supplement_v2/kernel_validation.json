@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-29T07:25:46.719440+00:00",
+  "checks": [
+    {
+      "check": "independent dense Cholesky recursion and endpoint bounds",
+      "dimension": 2,
+      "rho": 0.25,
+      "upper": 0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "check": "independent dense Cholesky recursion and endpoint bounds",
+      "dimension": 16,
+      "rho": 0.25,
+      "upper": 0,
+      "max_absolute_difference": 6.938893903907228e-17
+    },
+    {
+      "check": "independent dense Cholesky recursion and endpoint bounds",
+      "dimension": 32,
+      "rho": 0.7,
+      "upper": 0.5,
+      "max_absolute_difference": 4.440892098500626e-16
+    },
+    {
+      "check": "independent dense Cholesky recursion and endpoint bounds",
+      "dimension": 8,
+      "rho": 0,
+      "upper": 0.4,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "check": "bivariate orthant analytic identity",
+      "rho": 0.25,
+      "error": -1.2484457911909885e-13,
+      "quad_error": 8.072387203128528e-11
+    },
+    {
+      "check": "bivariate orthant analytic identity",
+      "rho": 0.7,
+      "error": -1.8702261961323075e-11,
+      "quad_error": 5.134825234181955e-09
+    }
+  ],
+  "worker_equivalence": [
+    {
+      "case": "d_smooth1",
+      "method": "fixed_4",
+      "all_original_scientific_fields_checked": true
+    },
+    {
+      "case": "d_smooth1",
+      "method": "A02",
+      "all_original_scientific_fields_checked": true
+    },
+    {
+      "case": "d_smooth1",
+      "method": "PLUGIN_STAGE",
+      "all_original_scientific_fields_checked": true
+    },
+    {
+      "case": "d_ridge",
+      "method": "fixed_4",
+      "all_original_scientific_fields_checked": true
+    },
+    {
+      "case": "d_ridge",
+      "method": "A02",
+      "all_original_scientific_fields_checked": true
+    },
+    {
+      "case": "d_ridge",
+      "method": "PLUGIN_STAGE",
+      "all_original_scientific_fields_checked": true
+    }
+  ],
+  "references_sha256": "30afe269d32fe9f7bf32244413f3c6230fa4d72378803f2d4c63551bb550e083",
+  "sources": {
+    "supplement\\integrands.py": "bbf87154b2809eec58ee84a06af1c712a93986abdc9b08c349590861a0e9d6f3",
+    "supplement\\runtime.py": "5f5aecd1a2ad9bbf396d5df189ebab545345ce632847c8cc236fbc73f5c239eb",
+    "scripts\\validate_supplement.py": "34b4a447c004b07e595277033efd01a025bd85c4b5b0ae0d4981df93a11d5614"
+  },
+  "limitations": [
+    "Not an independent human proof or general floating-point certification.",
+    "Known [0,1] range is analytic. Continuum/grid/roundoff distinctions remain as in original sampling audit."
+  ]
+}

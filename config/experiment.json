@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "project": "RQMC_9950X_20261027",
+  "backend": "qmcpy",
+  "workers": 16,
+  "inner_threads": 1,
+  "batch_scrambles": 128,
+  "precision": "float64",
+  "seed": 20261027,
+  "alpha": 0.05,
+  "eb_cap": 0.5,
+  "hb_cap": 0.5,
+  "hb_theta": 0.5,
+  "budgets": [
+    4096,
+    16384
+  ],
+  "fixed_n": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "pilot_replicates": 16,
+  "pilot_nmax": {
+    "4096": 16,
+    "16384": 64
+  },
+  "min_production_replicates": 32,
+  "pilot_beta": 0.1,
+  "variance_floor": 1e-14,
+  "smooth_slope": [
+    -3,
+    -1
+  ],
+  "development_repetitions": 200,
+  "confirmation_repetitions": 1000,
+  "smoke_repetitions": 2,
+  "main_methods": [
+    "fixed_1",
+    "fixed_2",
+    "fixed_4",
+    "fixed_8",
+    "fixed_16",
+    "fixed_32",
+    "fixed_64",
+    "PLUGIN",
+    "A",
+    "B"
+  ],
+  "secondary_methods": [
+    "t_R8",
+    "t_R16",
+    "t_R32"
+  ],
+  "development_cases": [
+    {
+      "id": "d_smooth1",
+      "kind": "smooth1",
+      "d": 1
+    },
+    {
+      "id": "d_step",
+      "kind": "step",
+      "d": 1,
+      "threshold": 0.3333333333333333
+    },
+    {
+      "id": "d_exp",
+      "kind": "exp",
+      "d": 8,
+      "lam": 2.0
+    },
+    {
+      "id": "d_ridge",
+      "kind": "ridge",
+      "d": 8,
+      "threshold": 0.0
+    }
+  ],
+  "confirmation_cases": [
+    {
+      "id": "c_smooth1",
+      "kind": "smooth1",
+      "d": 1
+    },
+    {
+      "id": "c_step",
+      "kind": "step",
+      "d": 1,
+      "threshold": 0.3535533905932738
+    },
+    {
+      "id": "c_exp",
+      "kind": "exp",
+      "d": 32,
+      "lam": 3.0
+    },
+    {
+      "id": "c_ridge",
+      "kind": "ridge",
+      "d": 32,
+      "threshold": 1.5
+    },
+    {
+      "id": "c_smoothridge",
+      "kind": "smoothridge",
+      "d": 8,
+      "a": 0.5
+    },
+    {
+      "id": "c_product",
+      "kind": "product",
+      "d": 8
+    }
+  ],
+  "hbci_cases": [
+    "c_smooth1",
+    "c_ridge"
+  ],
+  "hbci_development_cases": [
+    "d_smooth1",
+    "d_ridge"
+  ],
+  "time_budget_hours": 72,
+  "compute_target_hours": 48,
+  "primary_method": null,
+  "primary_fixed_baseline": null
+}

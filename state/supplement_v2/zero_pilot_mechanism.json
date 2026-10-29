@@ -1,0 +1,194 @@
+{
+  "type": "DETERMINISTIC_SELECTOR_AND_A_PRIORI_PROBABILITY_DIAGNOSTIC_NOT_SIMULATION",
+  "integrand_calls": 0,
+  "rows": [
+    {
+      "method": "A02",
+      "pilot_count": 8,
+      "budget": 16384,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 16352,
+      "charged_pilot_calls": 32,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.0004534189906040367,
+        0.0009070532447389642,
+        0.0018148839702265744
+      ]
+    },
+    {
+      "method": "A02",
+      "pilot_count": 8,
+      "budget": 65536,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 65504,
+      "charged_pilot_calls": 32,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.00011316574900140561,
+        0.00022634763409363047,
+        0.0004527543134684915
+      ]
+    },
+    {
+      "method": "A02",
+      "pilot_count": 16,
+      "budget": 16384,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 16320,
+      "charged_pilot_calls": 64,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.00045430826949099625,
+        0.0009088325584555567,
+        0.0018184453952167735
+      ]
+    },
+    {
+      "method": "A02",
+      "pilot_count": 16,
+      "budget": 65536,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 65472,
+      "charged_pilot_calls": 64,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.00011322106388450334,
+        0.00022645827891477262,
+        0.0004529756566337658
+      ]
+    },
+    {
+      "method": "A02",
+      "pilot_count": 32,
+      "budget": 16384,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 16256,
+      "charged_pilot_calls": 128,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.00045609733278306205,
+        0.0009124123052667763,
+        0.0018256101973734829
+      ]
+    },
+    {
+      "method": "A02",
+      "pilot_count": 32,
+      "budget": 65536,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 65408,
+      "charged_pilot_calls": 128,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.00011333185596356586,
+        0.00022667989225639136,
+        0.00045341899059824804
+      ]
+    },
+    {
+      "method": "PLUGIN_STAGE",
+      "pilot_count": 8,
+      "budget": 16384,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 16352,
+      "charged_pilot_calls": 32,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.0004534189905963184,
+        0.0009070532447351041,
+        0.0018148839702246435
+      ]
+    },
+    {
+      "method": "PLUGIN_STAGE",
+      "pilot_count": 8,
+      "budget": 65536,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 65504,
+      "charged_pilot_calls": 32,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.00011316574899368855,
+        0.00022634763408977174,
+        0.0004527543134665618
+      ]
+    },
+    {
+      "method": "PLUGIN_STAGE",
+      "pilot_count": 16,
+      "budget": 16384,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 16320,
+      "charged_pilot_calls": 64,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.00045430826948327803,
+        0.0009088325584516967,
+        0.0018184453952148428
+      ]
+    },
+    {
+      "method": "PLUGIN_STAGE",
+      "pilot_count": 16,
+      "budget": 65536,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 65472,
+      "charged_pilot_calls": 64,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.0001132210638767863,
+        0.0002264582789109139,
+        0.0004529756566318362
+      ]
+    },
+    {
+      "method": "PLUGIN_STAGE",
+      "pilot_count": 32,
+      "budget": 16384,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 16256,
+      "charged_pilot_calls": 128,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.0004560973327753439,
+        0.0009124123052629163,
+        0.001825610197371552
+      ]
+    },
+    {
+      "method": "PLUGIN_STAGE",
+      "pilot_count": 32,
+      "budget": 65536,
+      "all_zero_initial_pilot": true,
+      "selected_n": 1,
+      "production_reps": 65408,
+      "charged_pilot_calls": 128,
+      "stops_at_initial_depth": true,
+      "scores": [
+        0.00011333185595584882,
+        0.00022667989225253263,
+        0.0004534189905963184
+      ]
+    }
+  ],
+  "miss_probability_lower_bound": "max(0,1-K*h0*p); union bound requires uniform point marginals, not within-net independence",
+  "default_K16_h4_bounds": {
+    "p_1e-3": 0.936,
+    "p_1e-4": 0.9936
+  },
+  "finite_grid_qualification": "Use grid event probability for literal finite-grid statement; continuous threshold probability is the ideal model quantity.",
+  "scope": "Declared two budgets and pilot counts8/16/32, no claim for arbitrary settings or future integrands",
+  "selector_source_sha256": "60b759a4507b0db7f61cb9133ca112f01ec722ce187ae4ccda61242494a7137a"
+}

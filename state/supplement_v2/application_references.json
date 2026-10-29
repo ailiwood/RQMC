@@ -1,0 +1,43 @@
+{
+  "cases": {
+    "s_mvn16": {
+      "reference": 0.010040653638876148,
+      "float64_quad": 0.01004065363887615,
+      "quad_reported_absolute_error": 6.217036454742442e-15,
+      "mpmath_50digits": "0.0100406536388761480860975923065526696963974716",
+      "mpmath_80digits": "0.0100406536388761480860975923065526696963974715772587312486320201114648338577",
+      "truncation_tail_bound": 3.552964224155306e-33,
+      "coverage_sensitivity_radius": 1e-12,
+      "radius_is_numerical_sensitivity_not_formal_interval_arithmetic_certificate": true,
+      "kernel_check": {
+        "scrambles": 32,
+        "n": 4096,
+        "mean": 0.010040297548928986,
+        "mcse": 1.1096045245103132e-06,
+        "difference": -3.5608994716253284e-07,
+        "calls": 131072,
+        "not_coverage_evidence": true
+      }
+    },
+    "s_mvn32": {
+      "reference": 0.235772705322142,
+      "float64_quad": 0.235772705322142,
+      "quad_reported_absolute_error": 4.500155551301095e-15,
+      "mpmath_50digits": "0.235772705322142000300712641911290723282475299",
+      "mpmath_80digits": "0.235772705322142000300712641911290723282475299345392753598608221068035102115",
+      "truncation_tail_bound": 3.552964224155306e-33,
+      "coverage_sensitivity_radius": 1e-12,
+      "radius_is_numerical_sensitivity_not_formal_interval_arithmetic_certificate": true,
+      "kernel_check": {
+        "scrambles": 32,
+        "n": 4096,
+        "mean": 0.23577101211147233,
+        "mcse": 4.2894675844789014e-05,
+        "difference": -1.6932106696732063e-06,
+        "calls": 131072,
+        "not_coverage_evidence": true
+      }
+    }
+  },
+  "mpmath_wheel_sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"
+}

@@ -1,0 +1,33 @@
+{
+  "status": "27_PEER_REVIEWED_JOURNAL_REFERENCES_CITED_AND_MAPPED",
+  "scope": "Each bibliography entry is a journal article with a DOI. Publisher DOI pages were used to check bibliographic identity; claims in the manuscript are limited to the cited topic.",
+  "items": [
+    {"key":"jain2026","doi":"10.1093/imaiai/iaag003","claim":"Existing empirical Bernstein and hedged betting intervals for bounded RQMC, finite-replication behavior, and net-size allocation.","source":"https://doi.org/10.1093/imaiai/iaag003","sections":["Introduction","Methods"]},
+    {"key":"wsr2024","doi":"10.1093/jrsssb/qkad009","claim":"Predictable empirical Bernstein and hedged betting inference for bounded means.","source":"https://doi.org/10.1093/jrsssb/qkad009","sections":["Introduction","Methods"]},
+    {"key":"panowen2025","doi":"10.1016/j.jco.2025.101956","claim":"Skewness of randomized quasi-Monte Carlo estimates.","source":"https://doi.org/10.1016/j.jco.2025.101956","sections":["Introduction","Methods"]},
+    {"key":"morris2019","doi":"10.1002/sim.8086","claim":"Transparent simulation-study estimands and uncertainty reporting.","source":"https://doi.org/10.1002/sim.8086","sections":["Introduction","Study"]},
+    {"key":"brown2001","doi":"10.1214/ss/1009213286","claim":"Wilson intervals for binomial coverage summaries.","source":"https://doi.org/10.1214/ss/1009213286","sections":["Introduction","Study"]},
+    {"key":"howard2021","doi":"10.1214/20-AOS1991","claim":"General time-uniform confidence-sequence framework.","source":"https://doi.org/10.1214/20-AOS1991","sections":["Introduction"]},
+    {"key":"panquantile2026","doi":"10.1214/26-AOS2631","claim":"Quantile-based confidence intervals for randomized nets under the paper's stated asymptotic conditions.","source":"https://doi.org/10.1214/26-AOS2631","sections":["Introduction"]},
+    {"key":"genz1992","doi":"10.1080/10618600.1992.10477010","claim":"Numerical transformation methods for multivariate normal probabilities.","source":"https://doi.org/10.1080/10618600.1992.10477010","sections":["Supplementary Design"]},
+    {"key":"jagadeeswaran2019","doi":"10.1007/s11222-019-09895-9","claim":"Automatic Bayesian cubature with lattice sampling and sample-size selection.","source":"https://doi.org/10.1007/s11222-019-09895-9","sections":["Introduction"]},
+    {"key":"genz2004","doi":"10.1023/B:STCO.0000035304.20635.31","claim":"Numerical computation of rectangular bivariate and trivariate normal and t probabilities.","source":"https://doi.org/10.1023/B:STCO.0000035304.20635.31","sections":["Supplementary Design"]},
+    {"key":"caflisch1998","doi":"10.1017/S0962492900002804","claim":"Review of Monte Carlo and quasi-Monte Carlo integration methods.","source":"https://doi.org/10.1017/S0962492900002804","sections":["Introduction"]},
+    {"key":"owen1997siam","doi":"10.1137/S0036142994277468","claim":"Variance analysis of scrambled-net quadrature.","source":"https://doi.org/10.1137/S0036142994277468","sections":["Introduction"]},
+    {"key":"owen1997annals","doi":"10.1214/aos/1031594731","claim":"Scrambled-net variance behavior for smooth integrands.","source":"https://doi.org/10.1214/aos/1031594731","sections":["Introduction"]},
+    {"key":"owen2003","doi":"10.1145/945511.945518","claim":"Variance behavior under alternative digital-net scramblings.","source":"https://doi.org/10.1145/945511.945518","sections":["Introduction","Study"]},
+    {"key":"yue1999","doi":"10.1016/S0167-7152(99)00018-8","claim":"Variance of quadrature over scrambled nets and sequences.","source":"https://doi.org/10.1016/S0167-7152(99)00018-8","sections":["Introduction"]},
+    {"key":"hickernellyue2000","doi":"10.1137/S0036142999358019","claim":"Mean-square discrepancy properties of scrambled digital sequences.","source":"https://doi.org/10.1137/S0036142999358019","sections":["Introduction"]},
+    {"key":"joekuo2008","doi":"10.1137/070709359","claim":"Sobol sequence construction with improved two-dimensional projections.","source":"https://doi.org/10.1137/070709359","sections":["Introduction","Study"]},
+    {"key":"dick2011","doi":"10.1214/11-AOS880","claim":"Higher-order scrambled digital nets and root-mean-square error rates for smooth integrands.","source":"https://doi.org/10.1214/11-AOS880","sections":["Introduction"]},
+    {"key":"gerber2015","doi":"10.1016/j.jco.2015.06.001","claim":"Scrambled-net integration with arbitrary sample sizes.","source":"https://doi.org/10.1016/j.jco.2015.06.001","sections":["Introduction"]},
+    {"key":"lecuyerlemieux2000","doi":"10.1287/mnsc.46.9.1214.12231","claim":"Lattice-rule variance reduction for integration and simulation.","source":"https://doi.org/10.1287/mnsc.46.9.1214.12231","sections":["Introduction"]},
+    {"key":"gerberchopin2015","doi":"10.1111/rssb.12104","claim":"Sequential quasi-Monte Carlo methods.","source":"https://doi.org/10.1111/rssb.12104","sections":["Introduction"]},
+    {"key":"nakayama2024","doi":"10.1145/3643847","claim":"Sufficient conditions for RQMC central limit theorems and confidence intervals.","source":"https://doi.org/10.1145/3643847","sections":["Introduction"]},
+    {"key":"botev2017","doi":"10.1111/rssb.12162","claim":"Minimax tilting for simulation and estimation under multivariate normal linear restrictions.","source":"https://doi.org/10.1111/rssb.12162","sections":["Supplementary Design"]},
+    {"key":"shi2022","doi":"10.1287/ijoc.2020.1057","claim":"Dynamic finite-budget simulation allocation for feasibility determination.","source":"https://doi.org/10.1287/ijoc.2020.1057","sections":["Introduction"]},
+    {"key":"songkawai2023","doi":"10.1137/21M1430996","claim":"Dynamic finite-budget allocation for stratified sampling with adaptive variance reduction.","source":"https://doi.org/10.1137/21M1430996","sections":["Introduction"]},
+    {"key":"xiaogao2017","doi":"10.1016/j.automatica.2017.07.006","claim":"Simulation budget allocation for simultaneous best- and worst-subset selection.","source":"https://doi.org/10.1016/j.automatica.2017.07.006","sections":["Introduction"]},
+    {"key":"oktenliu2021","doi":"10.1016/j.ress.2021.107520","claim":"Review of RQMC methods and applications in global sensitivity analysis.","source":"https://doi.org/10.1016/j.ress.2021.107520","sections":["Introduction"]}
+  ]
+}

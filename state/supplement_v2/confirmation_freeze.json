@@ -1,0 +1,332 @@
+{
+  "original_signature": "daf9ab13a3cdfb08a697a49c5f62ef9156b1fcd8da5e8dbf1329317384a73f2d",
+  "config": {
+    "schema": 1,
+    "description": "Approved secondary application/stress and minimal pilot sensitivity; old primary confirmation unchanged",
+    "seed": 20261029,
+    "budgets": [
+      16384,
+      65536
+    ],
+    "repetitions": 1000,
+    "cases": [
+      {
+        "id": "s_mvn16",
+        "kind": "mvn_upper",
+        "d": 15,
+        "normal_dimension": 16,
+        "rho": 0.25,
+        "upper": 0.0
+      },
+      {
+        "id": "s_mvn32",
+        "kind": "mvn_upper",
+        "d": 31,
+        "normal_dimension": 32,
+        "rho": 0.7,
+        "upper": 0.5
+      },
+      {
+        "id": "s_rare3",
+        "kind": "ridge",
+        "d": 32,
+        "threshold": 3.090232306167813
+      },
+      {
+        "id": "s_rare4",
+        "kind": "ridge",
+        "d": 32,
+        "threshold": 3.719016485455709
+      }
+    ],
+    "methods": [
+      "fixed_1",
+      "fixed_2",
+      "fixed_4",
+      "fixed_8",
+      "fixed_16",
+      "fixed_32",
+      "fixed_64",
+      "A02",
+      "PLUGIN_STAGE"
+    ],
+    "sensitivity": {
+      "cases": [
+        "s_mvn16",
+        "s_rare4"
+      ],
+      "budget": 16384,
+      "pilot_counts": [
+        8,
+        32
+      ],
+      "repetitions": 1000
+    },
+    "profile_repetitions": 2,
+    "phase_confirmation": "supplement_v2_application_confirmation",
+    "phase_sensitivity": "supplement_v2_sensitivity_confirmation",
+    "phase_profile": "supplement_v2_runtime_profile",
+    "intervals": [
+      "ebci",
+      "hbci"
+    ]
+  },
+  "inherited_config": {
+    "schema": 1,
+    "project": "RQMC_9950X_RESCUE_V1_20261028",
+    "backend": "qmcpy",
+    "workers": 16,
+    "inner_threads": 1,
+    "batch_scrambles": 128,
+    "precision": "float64",
+    "seed": 20261029,
+    "alpha": 0.05,
+    "eb_cap": 0.5,
+    "hb_cap": 0.5,
+    "hb_theta": 0.5,
+    "budgets": [
+      4096,
+      16384,
+      65536
+    ],
+    "fixed_n": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "pilot_replicates": 16,
+    "pilot_nmax": {
+      "4096": 16,
+      "16384": 64,
+      "65536": 64
+    },
+    "min_production_replicates": 32,
+    "pilot_beta": 0.1,
+    "variance_floor": 1e-14,
+    "smooth_slope": [
+      -3,
+      -1
+    ],
+    "development_repetitions": 200,
+    "confirmation_repetitions": 1000,
+    "smoke_repetitions": 2,
+    "main_methods": [
+      "fixed_1",
+      "fixed_2",
+      "fixed_4",
+      "fixed_8",
+      "fixed_16",
+      "fixed_32",
+      "fixed_64",
+      "PLUGIN",
+      "A",
+      "B"
+    ],
+    "secondary_methods": [
+      "t_R8",
+      "t_R16",
+      "t_R32"
+    ],
+    "development_cases": [
+      {
+        "id": "d_smooth1",
+        "kind": "smooth1",
+        "d": 1
+      },
+      {
+        "id": "d_step",
+        "kind": "step",
+        "d": 1,
+        "threshold": 0.3333333333333333
+      },
+      {
+        "id": "d_exp",
+        "kind": "exp",
+        "d": 8,
+        "lam": 2.0
+      },
+      {
+        "id": "d_ridge",
+        "kind": "ridge",
+        "d": 8,
+        "threshold": 0.0
+      }
+    ],
+    "confirmation_cases": [
+      {
+        "id": "c_smooth1",
+        "kind": "smooth1",
+        "d": 1
+      },
+      {
+        "id": "c_step",
+        "kind": "step",
+        "d": 1,
+        "threshold": 0.3535533905932738
+      },
+      {
+        "id": "c_exp",
+        "kind": "exp",
+        "d": 32,
+        "lam": 3.0
+      },
+      {
+        "id": "c_ridge",
+        "kind": "ridge",
+        "d": 32,
+        "threshold": 1.5
+      },
+      {
+        "id": "c_smoothridge",
+        "kind": "smoothridge",
+        "d": 8,
+        "a": 0.5
+      },
+      {
+        "id": "c_product",
+        "kind": "product",
+        "d": 8
+      }
+    ],
+    "hbci_cases": [
+      "c_smooth1",
+      "c_ridge"
+    ],
+    "hbci_development_cases": [
+      "d_smooth1",
+      "d_ridge"
+    ],
+    "time_budget_hours": 72,
+    "compute_target_hours": 48,
+    "primary_method": "A02",
+    "primary_fixed_baseline": "fixed_4"
+  },
+  "profiles": {
+    "A01": {
+      "objective": "moment_eb",
+      "variance": "log_smooth",
+      "pilot_replicates": 16,
+      "pilot_nmax": {
+        "4096": 16,
+        "16384": 64,
+        "65536": 64
+      }
+    },
+    "PLUGIN_MATCH": {
+      "objective": "moment_eb",
+      "variance": "raw",
+      "pilot_replicates": 16,
+      "pilot_nmax": {
+        "4096": 16,
+        "16384": 64,
+        "65536": 64
+      }
+    },
+    "A02": {
+      "objective": "moment_eb",
+      "variance": "log_smooth",
+      "pilot_replicates": 16,
+      "pilot_nmax": {
+        "4096": 16,
+        "16384": 64,
+        "65536": 64
+      },
+      "pilot_strategy": "adaptive_depth",
+      "initial_depth": 4
+    },
+    "PLUGIN_STAGE": {
+      "objective": "moment_eb",
+      "variance": "raw",
+      "pilot_replicates": 16,
+      "pilot_nmax": {
+        "4096": 16,
+        "16384": 64,
+        "65536": 64
+      },
+      "pilot_strategy": "adaptive_depth",
+      "initial_depth": 4
+    },
+    "BUDGET_FIXED": {
+      "objective": "budget_fixed",
+      "n_by_budget": {
+        "4096": 2,
+        "16384": 4,
+        "65536": 4
+      }
+    }
+  },
+  "runtime_sources": {
+    "config/supplement_v2.json": "4013ef61f9cfdab6b2679a971de05a02ec57ef7ca1ca83a6fa184fcd3b248026",
+    "docs/SUPPLEMENT_V2_MATH_AUDIT.md": "f6916bc0017b79cb6ebb6eda72344280a44402d3650709e1190fe65c474cfeff",
+    "docs/SUPPLEMENT_V2_PROTOCOL.md": "5c63c2dc7a44e04cc7b539d927067e7a38abed6fa4232f270363d85363dadc72",
+    "requirements-lock.txt": "3a2ca891a07a9b08ecc96ede66936072332116bae87637fa811ad841f015dfe7",
+    "scripts/_bootstrap.py": "70a8027a9693f8e2de42e92937f835dd2bfb27eb4bef58170ecddaa90b911b03",
+    "scripts/analyze_supplement_v2.py": "bfd824faae18830287128691028eb1836888e7fbd80f6c1716955c9b72ade871",
+    "scripts/audit_zero_pilot_mechanism.py": "239dca0a67b7916e3060c71734701552c26a55c05421969df18974f6bf38bbda",
+    "scripts/freeze_development_hb_reference.py": "0a63d0ed3674df88423b3bd9bd77351b0ea625d02b85b857deb0b729a43e1be6",
+    "scripts/run_supplement_v2.py": "c240786015d32e9a561ea79cfc17a0bc85acfec734d29780357de1d2f6de979e",
+    "scripts/time_supplement_intervals.py": "666c41966fdf302537fd1627b30f73b943c81677d54d1250f41eed59192d5dda",
+    "scripts/validate_supplement.py": "34b4a447c004b07e595277033efd01a025bd85c4b5b0ae0d4981df93a11d5614",
+    "state/supplement_v2/application_references.json": "30afe269d32fe9f7bf32244413f3c6230fa4d72378803f2d4c63551bb550e083",
+    "state/supplement_v2/development_hb_reference.json": "98b3e02e98df1ffbd3d6ca1ce70ee0740698abb1b56e0acd883daff393103820",
+    "state/supplement_v2/kernel_validation.json": "1d6db69ffa8e00ae59156dc96a4848008d3a9c36b6c90fc9bfb345f345156800",
+    "state/supplement_v2/zero_pilot_mechanism.json": "847ba3fa6e8ee5e9df6ae06e26e9225e668acaca47e9cd20debd5451e9053669",
+    "supplement/__init__.py": "f5bcd0e404e6ce844b6c83c50bea0021be937f936d32e8c86ea1994c64c91adc",
+    "supplement/integrands.py": "bbf87154b2809eec58ee84a06af1c712a93986abdc9b08c349590861a0e9d6f3",
+    "supplement/pool.py": "e7debe227891c31543cc1ac793758c0690d033b82fbd6a12325e35d80978876d",
+    "supplement/runtime.py": "5f5aecd1a2ad9bbf396d5df189ebab545345ce632847c8cc236fbc73f5c239eb",
+    "tests/test_supplement_v2.py": "cb7669e3ef49eb6104456733ec8411a549b8dade53e3df559f023ec3ada0275d",
+    "validation_dependencies/mpmath-1.3.0-py3-none-any.whl": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "qmcpy": "2.4",
+      "qmctoolscl": "1.2.4",
+      "psutil": "7.2.2",
+      "pytest": "9.1.1",
+      "matplotlib": "3.11.2"
+    },
+    "installed": {
+      "colorama": "0.4.6",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "fonttools": "4.67.0",
+      "iniconfig": "2.3.1",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pandas": "2.3.3",
+      "pillow": "13.0.0",
+      "pip": "25.0.1",
+      "pluggy": "1.7.0",
+      "psutil": "7.2.2",
+      "pygments": "2.21.0",
+      "pymupdf": "1.28.2",
+      "pyparsing": "3.3.3",
+      "pytest": "9.1.1",
+      "python-dateutil": "3.0.0",
+      "pytz": "2026.5",
+      "qmcpy": "2.4",
+      "qmctoolscl": "1.2.4",
+      "scipy": "1.18.1",
+      "setuptools": "65.5.0",
+      "six": "1.17.0",
+      "tzdata": "2026.5"
+    }
+  },
+  "protocol": "docs/SUPPLEMENT_V2_PROTOCOL.md",
+  "signature": "685ee665445afa5716ca0519759821a87b593345870d6b21dce6f3a37be3e3e3",
+  "sealed_utc": "2026-10-29T08:46:24.514608+00:00",
+  "profile_sha256": "f235b58f4aea16f78a35450b2a91bcfed25a285c4ebe6e77afe4b24f0a1b999f",
+  "estimated_pool_hours_with_50pct_headroom": 5.008814327547616
+}

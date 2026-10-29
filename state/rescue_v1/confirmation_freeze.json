@@ -1,0 +1,375 @@
+{
+  "status": "FROZEN_BEFORE_CONFIRMATION",
+  "utc": "2026-10-28T13:31:23.565453+00:00",
+  "config": {
+    "schema": 1,
+    "project": "RQMC_9950X_RESCUE_V1_20261028",
+    "backend": "qmcpy",
+    "workers": 16,
+    "inner_threads": 1,
+    "batch_scrambles": 128,
+    "precision": "float64",
+    "seed": 20261028,
+    "alpha": 0.05,
+    "eb_cap": 0.5,
+    "hb_cap": 0.5,
+    "hb_theta": 0.5,
+    "budgets": [
+      4096,
+      16384,
+      65536
+    ],
+    "fixed_n": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "pilot_replicates": 16,
+    "pilot_nmax": {
+      "4096": 16,
+      "16384": 64,
+      "65536": 64
+    },
+    "min_production_replicates": 32,
+    "pilot_beta": 0.1,
+    "variance_floor": 1e-14,
+    "smooth_slope": [
+      -3,
+      -1
+    ],
+    "development_repetitions": 200,
+    "confirmation_repetitions": 1000,
+    "smoke_repetitions": 2,
+    "main_methods": [
+      "fixed_1",
+      "fixed_2",
+      "fixed_4",
+      "fixed_8",
+      "fixed_16",
+      "fixed_32",
+      "fixed_64",
+      "PLUGIN",
+      "A",
+      "B"
+    ],
+    "secondary_methods": [
+      "t_R8",
+      "t_R16",
+      "t_R32"
+    ],
+    "development_cases": [
+      {
+        "id": "d_smooth1",
+        "kind": "smooth1",
+        "d": 1
+      },
+      {
+        "id": "d_step",
+        "kind": "step",
+        "d": 1,
+        "threshold": 0.3333333333333333
+      },
+      {
+        "id": "d_exp",
+        "kind": "exp",
+        "d": 8,
+        "lam": 2.0
+      },
+      {
+        "id": "d_ridge",
+        "kind": "ridge",
+        "d": 8,
+        "threshold": 0.0
+      }
+    ],
+    "confirmation_cases": [
+      {
+        "id": "c_smooth1",
+        "kind": "smooth1",
+        "d": 1
+      },
+      {
+        "id": "c_step",
+        "kind": "step",
+        "d": 1,
+        "threshold": 0.3535533905932738
+      },
+      {
+        "id": "c_exp",
+        "kind": "exp",
+        "d": 32,
+        "lam": 3.0
+      },
+      {
+        "id": "c_ridge",
+        "kind": "ridge",
+        "d": 32,
+        "threshold": 1.5
+      },
+      {
+        "id": "c_smoothridge",
+        "kind": "smoothridge",
+        "d": 8,
+        "a": 0.5
+      },
+      {
+        "id": "c_product",
+        "kind": "product",
+        "d": 8
+      }
+    ],
+    "hbci_cases": [
+      "c_smooth1",
+      "c_ridge"
+    ],
+    "hbci_development_cases": [
+      "d_smooth1",
+      "d_ridge"
+    ],
+    "time_budget_hours": 72,
+    "compute_target_hours": 48,
+    "primary_method": "A02",
+    "primary_fixed_baseline": "fixed_4"
+  },
+  "profiles": {
+    "A01": {
+      "objective": "moment_eb",
+      "variance": "log_smooth",
+      "pilot_replicates": 16,
+      "pilot_nmax": {
+        "4096": 16,
+        "16384": 64,
+        "65536": 64
+      }
+    },
+    "PLUGIN_MATCH": {
+      "objective": "moment_eb",
+      "variance": "raw",
+      "pilot_replicates": 16,
+      "pilot_nmax": {
+        "4096": 16,
+        "16384": 64,
+        "65536": 64
+      }
+    },
+    "A02": {
+      "objective": "moment_eb",
+      "variance": "log_smooth",
+      "pilot_replicates": 16,
+      "pilot_nmax": {
+        "4096": 16,
+        "16384": 64,
+        "65536": 64
+      },
+      "pilot_strategy": "adaptive_depth",
+      "initial_depth": 4
+    },
+    "PLUGIN_STAGE": {
+      "objective": "moment_eb",
+      "variance": "raw",
+      "pilot_replicates": 16,
+      "pilot_nmax": {
+        "4096": 16,
+        "16384": 64,
+        "65536": 64
+      },
+      "pilot_strategy": "adaptive_depth",
+      "initial_depth": 4
+    },
+    "BUDGET_FIXED": {
+      "objective": "budget_fixed",
+      "n_by_budget": {
+        "4096": 2,
+        "16384": 4,
+        "65536": 4
+      }
+    }
+  },
+  "methods": [
+    "A",
+    "A01",
+    "A02",
+    "B",
+    "BUDGET_FIXED",
+    "PLUGIN",
+    "PLUGIN_MATCH",
+    "PLUGIN_STAGE",
+    "fixed_1",
+    "fixed_16",
+    "fixed_2",
+    "fixed_32",
+    "fixed_4",
+    "fixed_64",
+    "fixed_8",
+    "t_R16",
+    "t_R32",
+    "t_R8"
+  ],
+  "primary_method": "A02",
+  "primary_baseline": "fixed_4",
+  "budget_fixed": {
+    "objective": "budget_fixed",
+    "n_by_budget": {
+      "4096": 2,
+      "16384": 4,
+      "65536": 4
+    }
+  },
+  "runtime_sources": {
+    ".project-root": "8499ef2e63150b394d385673c5c3bace73385dc9aed01517de901ffe491a11e7",
+    "requirements-lock.txt": "3a2ca891a07a9b08ecc96ede66936072332116bae87637fa811ad841f015dfe7",
+    "rqmc/__init__.py": "c95ccb5ba75a35daa774bb2d7d6947829d4f2c1a2c8f6c96ae184ec4a4fb3153",
+    "rqmc/allocation.py": "7f1b92137bcad8350a5c19a898decd7183eeba4aa354c80a85774ddbe7116a1c",
+    "rqmc/common.py": "6ed3c28922781a41ad5885692d251172d2454259bf07f2374faa6a9820b7a2c5",
+    "rqmc/experiment.py": "1f7f6ffb331d3d3db2ec047f29b5e9a1743ad33fd1eab79727e9d55b1ad0e286",
+    "rqmc/freeze.py": "f5b254ebdc8330658f0637649e8d087c71fcb7c65bba6433938cafb1135b37fc",
+    "rqmc/integrands.py": "c03cb620811500ed5618b757ad9e78b98b50be3f759a14b37f9cca6810c4e13d",
+    "rqmc/intervals.py": "3d74370d3293012d62a9660d50fce4b419d1d94cac0d5bf65fb4045e7e83fae1",
+    "rqmc/rescue_allocation.py": "60b759a4507b0db7f61cb9133ca112f01ec722ce187ae4ccda61242494a7137a",
+    "rqmc/rescue_experiment.py": "17a6566647d6e84b0a749af4c750ca0d0fdb623179fae00c36e6c1562eb87ab8",
+    "rqmc/sampling.py": "f9d1c31869c98393fdd411741fed7dd1191c412a5f7ccb67246b4ab89cf2b9a9",
+    "scripts/_bootstrap.py": "70a8027a9693f8e2de42e92937f835dd2bfb27eb4bef58170ecddaa90b911b03",
+    "scripts/run_rescue.py": "662e1bb6ad0714aa1c87be6fa11d86c542c4d008a135299974f747f913dd0b69"
+  },
+  "full_source_manifest": {
+    "requirements-fast.txt": "8a13a53ea96dde875b10af00cb30b51572bb7462ddf298b161cb6b598aa9216d",
+    "requirements-lock.txt": "3a2ca891a07a9b08ecc96ede66936072332116bae87637fa811ad841f015dfe7",
+    "requirements.txt": "213610cc6677b07ee10e8b8e9371738cfcb44a43ef98756ad2af708e3130635d",
+    "rqmc/__init__.py": "c95ccb5ba75a35daa774bb2d7d6947829d4f2c1a2c8f6c96ae184ec4a4fb3153",
+    "rqmc/allocation.py": "7f1b92137bcad8350a5c19a898decd7183eeba4aa354c80a85774ddbe7116a1c",
+    "rqmc/common.py": "6ed3c28922781a41ad5885692d251172d2454259bf07f2374faa6a9820b7a2c5",
+    "rqmc/experiment.py": "1f7f6ffb331d3d3db2ec047f29b5e9a1743ad33fd1eab79727e9d55b1ad0e286",
+    "rqmc/freeze.py": "f5b254ebdc8330658f0637649e8d087c71fcb7c65bba6433938cafb1135b37fc",
+    "rqmc/integrands.py": "c03cb620811500ed5618b757ad9e78b98b50be3f759a14b37f9cca6810c4e13d",
+    "rqmc/intervals.py": "3d74370d3293012d62a9660d50fce4b419d1d94cac0d5bf65fb4045e7e83fae1",
+    "rqmc/rescue_allocation.py": "60b759a4507b0db7f61cb9133ca112f01ec722ce187ae4ccda61242494a7137a",
+    "rqmc/rescue_experiment.py": "17a6566647d6e84b0a749af4c750ca0d0fdb623179fae00c36e6c1562eb87ab8",
+    "rqmc/sampling.py": "f9d1c31869c98393fdd411741fed7dd1191c412a5f7ccb67246b4ab89cf2b9a9",
+    "scripts/_bootstrap.py": "70a8027a9693f8e2de42e92937f835dd2bfb27eb4bef58170ecddaa90b911b03",
+    "scripts/analyze_rescue.py": "278dc57f805417f46afb6602baa63874c3354e5d4febd68b64c6fad35c2cc845",
+    "scripts/analyze_results.py": "647e5e2e39c9efa9cb8ae82cc5972eb552c22f729e71272341f2df0ee1ffbde8",
+    "scripts/audit_design.py": "ac68097e620f6532523dfce6e026b9ecf1fb4d8b195f35bcb7ebfd3b0b267156",
+    "scripts/audit_journal.py": "1f46fe120149e67ba888ec6a899b6f381c9c319516e408170a87c28ffdb6a218",
+    "scripts/audit_numerics.py": "b6a84634caecb82c794f6764ad70b03b5fca43c266c8ae1690e9ca68dac5dd44",
+    "scripts/benchmark_runtime.py": "8343d62d277ffcef33c1514a791561bbe43b517d0b5371c4553f1d566af718c4",
+    "scripts/build_failure_report.py": "c0a1cf71a08eae42afeb640e473a5c0584e1f2bcf7ffb8169a93f139e1f46f58",
+    "scripts/build_pdf.py": "52e6f2e2443fc517525db353a890c85ba2d18d06f789a971c6cee97dd153ec99",
+    "scripts/doctor.py": "18757f69f5463a826a2071d6288377271acb552c03ef2289ee5535d040f75a8d",
+    "scripts/fetch_sources.py": "efc71dab757f8630b954f4785b262d22e26fb179df00884cca3cfede32186ecc",
+    "scripts/fetch_template.py": "2d3b9cfa7feabdfd997a04bc664c6e52d5a7804128a82b155f557aa3be1387b1",
+    "scripts/freeze.py": "e28502726f10902ff8e56bbfba552140a7c06047fcdfa364d1d28e3bd0a67a2a",
+    "scripts/freeze_rescue.py": "103450b233ef92eb809d9cb1136bcc8cdbcb95d2f2e0a71134a554c284ca5a6e",
+    "scripts/package_reproducibility.py": "88037b45d97a178fe2b84346645c082e9864e1d7e98ce0e05e08508d8c865661",
+    "scripts/package_source.py": "ec973e8d298ab6f479faeb6139b8c97909c515a61dfea95bafb43a7e8618c721",
+    "scripts/render_pdf.py": "79c09f05296a26cde43404fcdfdbd28badd01cfd54ccbbc2578ec03f55f7cba1",
+    "scripts/reproduce.py": "22217d1c319444afbb023e7db6580a584ecfa22a25e846810f34fad989dcb163",
+    "scripts/review_upgrade_headroom.py": "e2cecae60502efccfbd3955a814fd37da4700b25e7367a9fa0ec482f6e2138bc",
+    "scripts/run.py": "bd1522c12b865ef583359c65b2cd97f18960f69613fa043bc93847d93343529b",
+    "scripts/run_rescue.py": "662e1bb6ad0714aa1c87be6fa11d86c542c4d008a135299974f747f913dd0b69",
+    "scripts/safe_clean.py": "c05134aa7a3d7872f65405825013018e2842d53da6764b086a8f3f2df9f9eac5",
+    "scripts/summarize.py": "efbb365c89f4315130ca8094a006184c31c90ced235e3cc70ff1c667a6766773",
+    "tests/conftest.py": "8f7efa6321ed6acfa35c72f2b2768e15082fbba6157c8528c7f79441ef067d38",
+    "tests/test_audit_extensions.py": "9083de7c3769c8c77340d689e3e5b54571edf3d94263c1538e3591ad65c4be40",
+    "tests/test_cleanup.py": "68d71394e18eb5ea25faba55dfba1202e34cd64fb5277dbaad8036ae51d80854",
+    "tests/test_core.py": "3048936248f6f16f9beab12d2ab9b241f907289fe4de26c405bf6080d1b4ec38",
+    "tests/test_freeze.py": "75acdd745c22b3914e095840cbb0b0a40b9b4edc9516f6ceb1895930697f5b9f",
+    "tests/test_rescue.py": "af3bb72ad6ca9098c7284f27fb71bf12abbd4516a0a4da4d5fc7de3a72c6a6bc",
+    ".project-root": "8499ef2e63150b394d385673c5c3bace73385dc9aed01517de901ffe491a11e7",
+    "config/rescue_v1.json": "7d9b7f08cf8c7abab4f94837f28a1ecb913bc53cc67aa51e09c0c9933687143a",
+    "docs/RESCUE_AUTHORIZATION.md": "73d22a88d6a42fe5296c1b7f17d194776cdce65226ca994b4de8f335b1192a58",
+    "docs/RESCUE_CONFIRMATION_PROTOCOL.md": "ae6ae8d7ab23e14d3444825f3c6ff03af8a452284853cdd6b2f7de715f74b79a",
+    "AGENTS.md": "71d4da30acd0ea225d33e1cbf30b193f4431e605ee3403b3c08291386eb6a820",
+    "研究设计_原文.md": "5d11fb22078161d6722c4cc5344023990d65aa5a71d765ed8d0b5e5dd0edbf75",
+    "研究设计_72小时执行补充.md": "135d15a249bb077a6dfd7f20069e54a9019a635a8de1d7311d5c44d701a28874",
+    "docs/EXECUTION.md": "11c2caca85dad772c6467ffdfca61e1cb1b223b0b27da1f8d830989acace98a4",
+    "docs/MATH_AUDIT.md": "4cc15a71ed51dcde27bfdf63274c038901d759d0b4d8bfc157828e54934c228a"
+  },
+  "protocol_hashes": {
+    "docs/RESCUE_CONFIRMATION_PROTOCOL.md": "ae6ae8d7ab23e14d3444825f3c6ff03af8a452284853cdd6b2f7de715f74b79a",
+    "docs/RESCUE_AUTHORIZATION.md": "73d22a88d6a42fe5296c1b7f17d194776cdce65226ca994b4de8f335b1192a58"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "qmcpy": "2.4",
+      "qmctoolscl": "1.2.4",
+      "psutil": "7.2.2",
+      "pytest": "9.1.1",
+      "matplotlib": "3.11.2"
+    },
+    "installed": {
+      "colorama": "0.4.6",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "fonttools": "4.67.0",
+      "iniconfig": "2.3.1",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pandas": "2.3.3",
+      "pillow": "13.0.0",
+      "pip": "25.0.1",
+      "pluggy": "1.7.0",
+      "psutil": "7.2.2",
+      "pygments": "2.21.0",
+      "pymupdf": "1.28.2",
+      "pyparsing": "3.3.3",
+      "pytest": "9.1.1",
+      "python-dateutil": "3.0.0",
+      "pytz": "2026.5",
+      "qmcpy": "2.4",
+      "qmctoolscl": "1.2.4",
+      "scipy": "1.18.1",
+      "setuptools": "65.5.0",
+      "six": "1.17.0",
+      "tzdata": "2026.5"
+    }
+  },
+  "source_snapshot": "state/rescue_v1/confirmation_source.zip",
+  "source_snapshot_sha256": "f56b673d119edafb7f70002d756f43810c14f2fb968212c3de71f35416239e1d",
+  "expected_tasks": 324000,
+  "expected_intervals": 414000,
+  "scientific_interventions_used": 2,
+  "development_comparisons": {
+    "primary": {
+      "method": "A02",
+      "reference": "fixed_4",
+      "ci": "ebci",
+      "cells": 12,
+      "geometric_mean_ratio": 0.9141192332359058,
+      "ratio_lo": 0.9109781971980322,
+      "ratio_hi": 0.9172710995081601,
+      "families_with_10pct_gain": [
+        "d_exp",
+        "d_step"
+      ],
+      "cells_with_10pct_gain": 3,
+      "worst_ratio": 1.07576267377527
+    },
+    "stronger_schedule": {
+      "method": "A02",
+      "reference": "BUDGET_FIXED",
+      "ci": "ebci",
+      "cells": 12,
+      "geometric_mean_ratio": 0.9531719373901901,
+      "ratio_lo": 0.9497177575446701,
+      "ratio_hi": 0.9566386802927976,
+      "families_with_10pct_gain": [
+        "d_exp",
+        "d_step"
+      ],
+      "cells_with_10pct_gain": 2,
+      "worst_ratio": 1.0595553577176227
+    }
+  },
+  "signature": "daf9ab13a3cdfb08a697a49c5f62ef9156b1fcd8da5e8dbf1329317384a73f2d"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "description": "Approved secondary application/stress and minimal pilot sensitivity; old primary confirmation unchanged",
+  "seed": 20261029,
+  "budgets": [16384, 65536],
+  "repetitions": 1000,
+  "cases": [
+    {"id":"s_mvn16","kind":"mvn_upper","d":15,"normal_dimension":16,"rho":0.25,"upper":0.0},
+    {"id":"s_mvn32","kind":"mvn_upper","d":31,"normal_dimension":32,"rho":0.70,"upper":0.5},
+    {"id":"s_rare3","kind":"ridge","d":32,"threshold":3.090232306167813},
+    {"id":"s_rare4","kind":"ridge","d":32,"threshold":3.719016485455709}
+  ],
+  "methods":["fixed_1","fixed_2","fixed_4","fixed_8","fixed_16","fixed_32","fixed_64","A02","PLUGIN_STAGE"],
+  "sensitivity":{"cases":["s_mvn16","s_rare4"],"budget":16384,"pilot_counts":[8,32],"repetitions":1000},
+  "profile_repetitions":2,
+  "phase_confirmation":"supplement_v2_application_confirmation",
+  "phase_sensitivity":"supplement_v2_sensitivity_confirmation",
+  "phase_profile":"supplement_v2_runtime_profile",
+  "intervals":["ebci","hbci"]
+}

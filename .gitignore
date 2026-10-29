@@ -1,0 +1,12 @@
+.venv/
+.runtime/
+.tmp/
+.cache/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+results/
+state/**/RUN.lock
+state/**/experimental_clock.json
+state/**/progress.json
+paper/

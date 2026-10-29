@@ -1,0 +1,2 @@
+# Optional accelerated independent-scramble backend. Validate locally before freezing.
+qmcpy>=2,<3

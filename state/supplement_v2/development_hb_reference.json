@@ -1,0 +1,31 @@
+{
+  "type": "PROSPECTIVE_SECONDARY_REFERENCE_NOT_NEW_METHOD",
+  "selected_reference": "fixed_4",
+  "interval": "hbci",
+  "selection": "Smallest geometric mean of the six development-cell mean widths; ties choose smaller n",
+  "development_cases": [
+    "d_smooth1",
+    "d_ridge"
+  ],
+  "budgets": [
+    4096,
+    16384,
+    65536
+  ],
+  "repetitions_per_cell": 200,
+  "all_fixed_scores": {
+    "fixed_1": 0.013860169476491484,
+    "fixed_16": 0.009557937147338604,
+    "fixed_2": 0.008796719539639732,
+    "fixed_32": 0.015798880514688633,
+    "fixed_4": 0.006292455886076895,
+    "fixed_64": 0.028894766254948745,
+    "fixed_8": 0.006628676836202391
+  },
+  "development_summary_sha256": "d3b50fd023d873230dafba98ddd9dcf8ef33bb79958c1e26008a62974c46d33e",
+  "sealed_utc": "2026-10-29T08:27:02.534411+00:00",
+  "new_integrand_calls": 0,
+  "all_seven_fixed_references_retained": true,
+  "original_primary_reference_unchanged": true,
+  "scope": "Only two development families had HBCI; this is a common deployable reference, not a cellwise oracle."
+}
