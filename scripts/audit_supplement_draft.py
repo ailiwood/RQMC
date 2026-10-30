@@ -40,8 +40,8 @@ def main():
     assert 'Draft for human review; not submitted' not in settings
     assert 'Review draft: Not submitted' not in settings
     assert '\\conflictsofinterest{The authors declare no conflicts of interest.}' in maintex
-    for text in ('GUO LINA','Sun Chengyu','Shandong Huayu University of Technology','253034'):assert text in settings
-    assert settings.index('GUO LINA')<settings.index('Sun Chengyu')
+    for text in ('Guo Lina','Sun Chengyu','Shandong Huayu University of Technology','253034'):assert text in settings
+    assert settings.index('Guo Lina')<settings.index('Sun Chengyu')
     assert 'AUTHOR\\_CONFIRM' not in alltex+settings
     abstract=maintex.split('\\abstract{',1)[1].split('}\n\\begin{document}',1)[0]
     assert len(abstract.split())<=200

@@ -25,7 +25,7 @@ if not archive.exists():
         'experimental_wall_cap_hours':24, 'rescue_interventions_used':2,
         'previous_manuscript_zip_sha256':sha_file(archive),
         'previous_pdf_sha256':sha_file(r/'paper/manuscript.pdf'),
-        'authors':[{'name':'GUO LINA','corresponding':True},
+        'authors':[{'name':'Guo Lina','corresponding':True},
                    {'name':'Sun Chengyu','corresponding':False}],
         'affiliation':'Shandong Huayu University of Technology, Dezhou, Shandong Province, China, 253034',
         'blank_backmatter':['Funding','Acknowledgments','Data and Code Availability'],
